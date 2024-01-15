@@ -1,7 +1,7 @@
 <?php
-$host = 'database-men.cmgrdhn7oybz.us-east-1.rds.amazonaws.com';
-$dbuser ='admin';
-$dbpassword = 'duck0204';
+$host = 'localhost';
+$dbuser ='superui';
+$dbpassword = 'qaz901028';
 $dbname = 'Orderdb';
 $link = mysqli_connect($host,$dbuser,$dbpassword,$dbname);
 if($link){
