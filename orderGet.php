@@ -6,6 +6,7 @@ require_once 'db.php';
 header("Access-Control-Allow-Origin:*");
 header("Content-Type:text/html;charset=utf-8");
 $id = $_GET['id'];
+// $id = 0;
 
 // sql語法存在變數中
 $sql = "SELECT orders.id, orders.product_id,orders.coupon_id, orders.amount, products.pname,products.price FROM orders,products
@@ -23,13 +24,12 @@ if ($result) {
       // while迴圈會根據資料數量，決定跑的次數
       // mysqli_fetch_assoc方法可取得一筆值
       while ($row = mysqli_fetch_assoc($result)) {
-          // 每跑一次迴圈就抓一筆值，最後放進data陣列中
-          $row['id'] = (int) $row['id'];
-          $row['product_id'] = (int) $row['product_id'];
-          $row['amount'] = (int) $row['amount'];
-          $row['price'] = (int) $row['price'];
-          $row['coupon_id'] = (int) $row['coupon_id'];
-          $datas[] = $row;
+        // 每跑一次迴圈就抓一筆值，最後放進data陣列中
+        $row['id'] = (int) $row['id'];
+        $row['product_id'] = (int) $row['product_id'];
+        $row['amount'] = (int) $row['amount'];
+        $row['price'] = (int) $row['price'];
+        $datas[] = $row;
       }
   }
   // 釋放資料庫查到的記憶體

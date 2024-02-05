@@ -9,8 +9,8 @@ $id = $_GET['id'];
 // $id = 1;
 
 // sql語法存在變數中
-$sql = "SELECT coupon.id FROM coupon
-  WHERE coupon.user_id='" . $id . "'";
+$sql = "SELECT id,cstatus FROM coupon
+  WHERE user_id='$id'AND cstatus IS NULL";
 // $sql = "ALTER TABLE orders
 //   ADD FOREIGN KEY (coupon_id) REFERENCES coupon(id);";
 // $sql = "UPDATE products SET price=95 WHERE id=8;";
@@ -27,7 +27,6 @@ if ($result) {
       // mysqli_fetch_assoc方法可取得一筆值
       while ($row = mysqli_fetch_assoc($result)) {
           // 每跑一次迴圈就抓一筆值，最後放進data陣列中
-          $row['id'] = (int) $row['id'];
           $datas[] = $row;
       }
   }

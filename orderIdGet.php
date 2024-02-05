@@ -14,8 +14,8 @@ $result = mysqli_query($link,$sql);
 if ($result) {
   // mysqli_num_rows方法可以回傳我們結果總共有幾筆資料
   if (mysqli_num_rows($result)>0) {
-      $row = mysqli_fetch_assoc($result);
-      $datas = $row;
+    $row = mysqli_fetch_assoc($result);
+    $datas = $row;
   }
   // 釋放資料庫查到的記憶體
   mysqli_free_result($result);
