@@ -9,7 +9,7 @@ $id = $_GET['id'];
 // $id = 1;
 
 // sql語法存在變數中
-$sql = "SELECT id,cstatus FROM coupon
+$sql = "SELECT id FROM coupon
   WHERE user_id='$id'AND cstatus IS NULL";
 // $sql = "ALTER TABLE orders
 //   ADD FOREIGN KEY (coupon_id) REFERENCES coupon(id);";
