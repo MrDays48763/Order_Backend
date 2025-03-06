@@ -1,9 +1,7 @@
 <?php
-$host = 'localhost';
-$username ='admin';
-$password = 'qaz901028';
-$dbname = 'Orderdb';
-
+require_once 'account.php';
+?>
+<?php
 $link = mysqli_connect($host,$username,$password,$dbname);
 
 // Check connection
