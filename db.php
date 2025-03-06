@@ -1,14 +1,15 @@
 <?php
 $host = 'localhost';
-$dbuser ='superui';
-$dbpassword = 'qaz901028';
+$username ='admin';
+$password = 'qaz901028';
 $dbname = 'Orderdb';
-$link = mysqli_connect($host,$dbuser,$dbpassword,$dbname);
-if($link){
-    mysqli_query($link,'SET NAMES uff8');
-    // echo "正確連接資料庫";
-}
-else {
-    echo "不正確連接資料庫</br>" . mysqli_connect_error();
-}
+
+$link = mysqli_connect($host,$username,$password,$dbname);
+
+// Check connection
+if (!$link) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
+mysqli_query($link,'SET NAMES utf8');
+mysqli_query($link,'SET time_zone = "+8:00"');
 ?>
